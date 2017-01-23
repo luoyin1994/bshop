@@ -1,0 +1,58 @@
+extends ../layout
+
+block style
+  style
+    :stylus
+      html, body
+        height 100%
+        overflow hidden
+
+      body
+        background-color #f9e6a1
+
+    :stylus
+      .container
+        overflow-y auto
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        margin 0 auto
+        padding 15px 5% 40px
+        line-height 1.5
+
+        h1
+          color #615921
+          border-bottom 2px solid #919191
+          line-height 2
+          text-align center
+          font-size 28px
+        section
+          padding 0 5px 15px
+          p
+            text-indent 2em
+            font-size 15px
+            color #222222
+
+block content
+  include ../component/reader/header
+
+  .container
+    h1 #{book.t}
+    section
+      each item in book.p
+        p #{item}
+    include ../component/reader/page-turning
+
+  include ../component/reader/footer
+
+block script
+  script.
+      var header = $('header')
+      var footer = $('footer')
+      var container = $('.container')
+      container.click(function () {
+          header.toggle()
+          footer.toggle()
+      })

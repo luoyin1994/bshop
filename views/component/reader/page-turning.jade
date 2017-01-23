@@ -1,0 +1,27 @@
+style
+  :stylus
+    li-len = 2
+    turning-width = 85%
+    turning-height = 35px
+    font-color = #e7e7e7
+    .page-turning
+      width turning-width
+      height turning-height
+      line-height turning-height
+      color font-color
+      margin 0 auto
+      background #222222
+      text-align center
+      border-radius 5px
+      .next-page, .last-page
+        box-sizing border-box
+        display inline-block
+        width (100% / li-len)
+      li
+        border-left 1px solid
+        &:first-child
+          border-left 0
+
+ul.page-turning
+  li.last-page 上一章
+  li.next-page 下一章

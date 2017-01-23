@@ -1,0 +1,64 @@
+style
+  :stylus
+    icon-size = 24px
+    @font-face
+      font-family 'icon'
+      src url('/font/fonts/icon.eot') format('embedded-opentype'), url('/font/fonts/icon.woff') format('woff'), url('/font/fonts/icon.ttf') format('truetype'), url('/font/fonts/icon.svg') format('svg')
+      font-weight normal
+      font-style normal
+
+    .icon-catalog, .icon-moon, .icon-Aa
+      &:before
+        font-family 'icon'
+        font-style normal
+        font-weight normal
+        font-size icon-size
+
+    .icon-catalog:before
+      content '\e900'
+
+    .icon-moon:before
+      content '\e901'
+
+    .icon-Aa:before
+      content 'Aa'
+  :stylus
+    @import '../../public/libs/stylus/text-shadow-around.styl'
+    footer
+      li-len = 3
+      footer-height = 65px
+      item-color = #e7e7e7
+      display none
+      position absolute
+      left 0
+      right 0
+      bottom 0
+      height footer-height
+      z-index 1
+      border-top 1px solid #cccccc
+      background-color rgba(34, 34, 34, 0.95)
+      ul, li
+        margin 0
+        padding 0
+      .item
+        color item-color
+        display inline-block
+        height 100%
+        width (100% / li-len)
+        list-style none
+        line-height footer-height
+        text-align center
+        .icon
+          cursor pointer
+
+footer
+  ul
+    li.item
+
+      i.icon.icon-catalog
+    li.item
+      i.icon.icon-Aa
+    li.item
+      i.icon.icon-moon
+
+script.

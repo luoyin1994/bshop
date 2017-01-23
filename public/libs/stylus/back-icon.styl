@@ -1,0 +1,21 @@
+back-icon(parent-height)
+  .back-icon
+    line-height parent-height
+    display inline-block
+    vertical-align middle
+    width 18px
+    height 18px
+    border 1px solid
+    border-radius 50%
+    &:before
+      position relative
+      left 50%
+      top 50%
+      content ''
+      display inline-block
+      height 8px
+      width 8px
+      border 1px solid
+      border-top-color transparent
+      border-right-color transparent
+      transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
