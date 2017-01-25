@@ -1,4 +1,4 @@
 *test*
 .idea
 node_modules
-#*/libs/stylus/*.css
+*/libs/stylus/*.css
