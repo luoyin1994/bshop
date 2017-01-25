@@ -8,10 +8,11 @@ block style
         overflow hidden
 
       body
-        background-color #f9e6a1
+        background-color #f8f9c4
+        transform translate3d(0,0,0)
 
     :stylus
-      .container
+      #container
         overflow-y auto
         position absolute
         top 0
@@ -24,21 +25,22 @@ block style
 
         h1
           color #615921
-          border-bottom 2px solid #919191
+          border-bottom 2px solid
           line-height 2
           text-align center
           font-size 28px
         section
-          padding 0 5px 15px
+          padding 20px 5px
           p
             text-indent 2em
             font-size 15px
             color #222222
+            margin-bottom 3px
 
 block content
   include ../component/reader/header
 
-  .container
+  #container
     h1 #{book.t}
     section
       each item in book.p
@@ -49,10 +51,16 @@ block content
 
 block script
   script.
-      var header = $('header')
-      var footer = $('footer')
-      var container = $('.container')
+      // 给一些特殊的节点增加id可以提高遍历的速度
+      var header = $('#header')
+      var footer = $('#footer')
+      var container = $('#container')
+      var pannel = footer.find('.pannel')
       container.click(function () {
           header.toggle()
           footer.toggle()
+          pannel.css({//换出和退回header，footer时pannel默认隐藏
+              opacity: 0,
+              height : 0  //如果只有opacity的话，可以点击的按钮依然可以点击，并没有真正意义上的隐藏
+          })
       })

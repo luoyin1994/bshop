@@ -3,15 +3,15 @@ html
     meta(charset="utf-8")
     meta(name='viewport' content='width=device-width,initial-scale=1,user-scalable=no,minimal-ui')
     meta(name='format-detection' content='telephone=no')
+    script(src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js")
+    script.
+          window.jQuery = $
+    script(src="//cdn.bootcss.com/jQuery-JSONP/2.4.0/jquery.jsonp.min.js")
     title #{title}
     link(rel="stylesheet" href="/libs/stylus/reset.css")
+    link(rel="stylesheet" href="/libs/stylus/color-bg.css")
+
     block style
   body
     block content
-
-    script(src="//cdn.bootcss.com/zepto/1.1.6/zepto.min.js")
-    script.
-      window.jQuery = $
-    script(src="//cdn.bootcss.com/jQuery-JSONP/2.4.0/jquery.jsonp.min.js")
-
     block script

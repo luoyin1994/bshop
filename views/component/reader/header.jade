@@ -2,7 +2,8 @@ style
   :stylus
     header-height = 60px
     font-color = #e7e7e7
-    header
+    #header
+      font-weight 500
       display none
       position absolute
       left 0
@@ -10,7 +11,6 @@ style
       top 0
       height header-height
       z-index 1
-      border-bottom 1px solid #ccc
       background-color rgba(34, 34, 34, 0.95)
 
       .back-wrap
@@ -21,15 +21,15 @@ style
           display block
           height 100%
           color font-color
-          back-icon-cicleWidth = 18px
+          back-icon-cicleWidth = 20px
           back-icon-arrowWidth = 8px
           .back-icon
             line-height header-height
             display inline-block
-            vertical-align middle
+            vertical-align 6px
             width back-icon-cicleWidth
             height @width
-            border 1px solid
+            border 2px solid
             border-radius 50%
             &:before
               position relative
@@ -39,18 +39,22 @@ style
               display inline-block
               width back-icon-arrowWidth
               height @width
-              border 1px solid
+              border 2px solid
               border-top-color transparent
               border-right-color transparent
+              -webkit-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
+              -moz-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
+              -o-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
+              -ms-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
               transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%)
+
           .back-text
             margin-left 10px
-            height 100%
             line-height header-height
 
 
 
-header
+header#header
   .back-wrap
     a(href='#').back
       i.back-icon

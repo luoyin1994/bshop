@@ -1,2 +1,6 @@
-box-shadow-around(shadow-width, shadow-blur, shadow-color)
-  box-shadow shadow-width 0 shadow-blur shadow-color, 0 shadow-width shadow-blur shadow-color, (- shadow-width) 0px shadow-blur shadow-color, 0px (- shadow-width) shadow-blur shadow-color
+box-shadow-around(shadow-width, shadow-blur, shadow-color,insetflag)
+  if insetflag is defined
+    insetflag = inset
+  else
+    insetflag = null
+  box-shadow shadow-width 0 shadow-blur shadow-color insetflag, 0 shadow-width shadow-blur shadow-color insetflag, (- shadow-width) 0px shadow-blur shadow-color insetflag, 0px (- shadow-width) shadow-blur shadow-color insetflag
