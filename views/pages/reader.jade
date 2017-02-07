@@ -5,7 +5,7 @@ block style
 block content
   include ../component/reader/header
 
-  #container(v-bind:class='{night:nightFlag}' v-bind:style="{background:bgColor}" @click='toggleTopBottom()' )
+  #container(v-bind:class='{night:nightFlag}' v-bind:style="{'background-color':bgColor}" @click='toggleTopBottom()' )
     h1 #{book.t}
     section
       each item in book.p
@@ -15,4 +15,5 @@ block content
   include ../component/reader/footer
 
 block script
+  script(src='/libs/js/zepto/main.js')
   script(src='/libs/js/vuejs/reader.js')

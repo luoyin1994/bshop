@@ -58,16 +58,21 @@
   display: inline-block;
 }
 #footer .pannel.pannel-Aa .font dd {
-  width: 40%;
+  width: 26.666666666666668%;
 }
 #footer .pannel.pannel-Aa .font dd span {
   height: 36.11111111111111px;
   width: 75%;
   border-radius: 15px;
-  border: 1px solid #fff;
+  color: #fffbe5;
+  border: 1px solid;
   box-shadow: 1px 0 1px 0px inset, 0 1px 1px 0px inset, -1px 0px 1px 0px inset, 0px -1px 1px 0px inset;
   line-height: 36.11111111111111px;
   vartical-align: middle;
+}
+#footer .pannel.pannel-Aa .font dd .reset {
+  box-shadow: 1px 0 1px 0px inset, 0 1px 1px 0px inset, -1px 0px 1px 0px inset, 0px -1px 1px 0px inset;
+  color: #7ec8ff;
 }
 #footer .pannel.pannel-Aa .bg-color dd {
   width: 16%;

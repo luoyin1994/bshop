@@ -13,7 +13,8 @@ footer#footer(v-show='topBottomFlag')
       dt 字号
       dd: span.enlarge(@click='enlargeFontSize()') 大
       dd: span.diminish(@click='enlargeFontSize(-1)') 小
-    dl.bg-color
+      dd: span.reset(@click="passageFontSize='15px'") 重置
+    dl.bg-color(v-if='!nightFlag')
       dt 背景
       dd: span.pinklight(@click='changeBgColor($event)')
       dd: span.yellowlight(@click='changeBgColor($event)')

@@ -6,10 +6,15 @@ html
     title #{title}
     link(rel="stylesheet" href="/libs/stylus/reset.css")
     link(rel="stylesheet" href="/libs/stylus/color-bg.css")
-    script(src="//cdn.bootcss.com/vue/2.1.10/vue.min.js")
-    script(src="//cdn.bootcss.com/vue-resource/1.1.0/vue-resource.min.js")
     block style
   body
     #app
       block content
+    script(src="//cdn.bootcss.com/vue/2.1.10/vue.min.js")
+    script(src="//cdn.bootcss.com/axios/0.15.3/axios.min.js")
+    script(src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js")
+    script.
+      window.jQuery = $
+    script(src="/libs/dependent/jsonp.js")
+    script(src="/libs/dependent/base64.js")
     block script
