@@ -1,0 +1,39 @@
+{
+  "name": "bshop",
+  "version": "1.0.0",
+  "description": "about book shop ",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "livereload": "^0.6.0",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  },
+  "scripts": {
+    "open": "chrome http://localhost:4000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luoyin1994/bshop.git"
+  },
+  "keywords": [
+    "book",
+    "shop"
+  ],
+  "author": "luoyin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luoyin1994/bshop/issues"
+  },
+  "homepage": "https://github.com/luoyin1994/bshop#readme"
+}

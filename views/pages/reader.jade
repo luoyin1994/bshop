@@ -9,7 +9,7 @@ block style
 
       body
         background-color #f8f9c4
-        transform translate3d(0,0,0)
+        transform translate3d(0, 0, 0)
 
     :stylus
       #container
@@ -51,16 +51,18 @@ block content
 
 block script
   script.
-      // 给一些特殊的节点增加id可以提高遍历的速度
-      var header = $('#header')
-      var footer = $('#footer')
-      var container = $('#container')
-      var pannel = footer.find('.pannel')
-      container.click(function () {
-          header.toggle()
-          footer.toggle()
-          pannel.css({//换出和退回header，footer时pannel默认隐藏
-              opacity: 0,
-              height : 0  //如果只有opacity的话，可以点击的按钮依然可以点击，并没有真正意义上的隐藏
+      (function () {
+          // 给一些特殊的节点增加id可以提高遍历的速度
+          var header    = $('#header')
+          var footer    = $('#footer')
+          var container = $('#container')
+          var pannel    = footer.find('.pannel')
+          container.click(function () {
+              header.toggle()
+              footer.toggle()
+              pannel.css({//换出和退回header，footer时pannel默认隐藏
+                  opacity: 0,
+                  height : 0  //如果只有opacity的话，可以点击的按钮依然可以点击，并没有真正意义上的隐藏
+              })
           })
-      })
+      })()
