@@ -1,0 +1,25 @@
+.page-turning {
+  width: 85%;
+  height: 35px;
+  line-height: 35px;
+  color: #e7e7e7;
+  margin: 0 auto;
+  background: #222;
+  text-align: center;
+  border-radius: 5px;
+}
+.page-turning .next-page,
+.page-turning .last-page,
+.page-turning .line {
+  display: inline-block;
+}
+.page-turning .line {
+  width: 0;
+  height: 100%;
+  vertical-align: top;
+  border-left: 1px solid;
+}
+.page-turning .next-page,
+.page-turning .last-page {
+  width: 49%;
+}

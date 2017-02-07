@@ -1,0 +1,81 @@
+@import '../../box-shadow-around.styl' //引用@import在没有设置引用路径之前是根据相对路径来计算的
+#footer
+  li-len = 3
+  item-height = 65px
+  item-font-color = #e7e7e7
+  footer-bg-color = rgba(34, 34, 34, 0.95)
+  position absolute
+  left 0
+  right 0
+  bottom 0
+  z-index 1
+  background-color footer-bg-color
+  color item-font-color
+  font-weight 500
+  ul, li
+    margin 0
+    padding 0
+  .item
+    display inline-block
+    width (100% / li-len)
+    list-style none
+    line-height item-height
+    text-align center
+    .icon
+      cursor pointer
+  .pannel
+    dt-weight = 1
+    dd-total-weight = 4
+    weight-amount = dt-weight + dd-total-weight
+    dt-width = (100% / weight-amount) * dt-weight
+    dd-total-width = (100% / weight-amount) * dd-total-weight
+    position absolute
+    bottom 100%
+    opacity 1
+    left 0
+    right 0
+    z-index -1
+    background-color footer-bg-color
+    padding 3% 5%
+    -webkit-transition all 0.3s //- css3手机端也需要考虑兼容问题
+    -moz-transition all 0.3s
+    -ms-transition all 0.3s
+    -o-transition all 0.3s
+    transition all 0.3s
+    &.hide
+      bottom -160%
+      opacity 0
+    dl
+      line-height item-height
+      text-align center
+      dt, dd
+        display inline-block
+      dt
+        width dt-width
+      dd
+        span
+          cursor pointer
+          display inline-block
+
+    &.pannel-Aa
+      .font
+        dd-amount = 2
+        dd
+          width (dd-total-width / dd-amount)
+          span
+            height (item-height / 1.8)
+            width 75%
+            border-radius 15px
+            border 1px solid #ffffff
+            box-shadow-around 1px 1px 0px #44cc43 true
+            line-height @height
+            vartical-align middle
+      .bg-color
+        dd-amount = 5
+        dd
+          width (dd-total-width / dd-amount)
+          span
+            height (item-height / 2)
+            width @height
+            border-radius 50%
+            vertical-align -10px

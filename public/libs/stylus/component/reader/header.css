@@ -1,0 +1,50 @@
+#header {
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  z-index: 1;
+  background-color: rgba(34,34,34,0.95);
+}
+#header .back-wrap {
+  margin-left: 5%;
+  height: 100%;
+  float: left;
+}
+#header .back-wrap .back {
+  display: block;
+  height: 100%;
+  color: #e7e7e7;
+}
+#header .back-wrap .back .back-icon {
+  line-height: 60px;
+  display: inline-block;
+  vertical-align: 6px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 50%;
+}
+#header .back-wrap .back .back-icon:before {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%);
+  -moz-transform: translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%);
+  -o-transform: translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%);
+  -ms-transform: translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%);
+  transform: translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%);
+}
+#header .back-wrap .back .back-text {
+  margin-left: 10px;
+  line-height: 60px;
+}

@@ -1,0 +1,80 @@
+#footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(34,34,34,0.95);
+  color: #e7e7e7;
+  font-weight: 500;
+}
+#footer ul,
+#footer li {
+  margin: 0;
+  padding: 0;
+}
+#footer .item {
+  display: inline-block;
+  width: 33.333333333333336%;
+  list-style: none;
+  line-height: 65px;
+  text-align: center;
+}
+#footer .item .icon {
+  cursor: pointer;
+}
+#footer .pannel {
+  position: absolute;
+  bottom: 100%;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: rgba(34,34,34,0.95);
+  padding: 3% 5%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#footer .pannel.hide {
+  bottom: -160%;
+  opacity: 0;
+}
+#footer .pannel dl {
+  line-height: 65px;
+  text-align: center;
+}
+#footer .pannel dl dt,
+#footer .pannel dl dd {
+  display: inline-block;
+}
+#footer .pannel dl dt {
+  width: 20%;
+}
+#footer .pannel dl dd span {
+  cursor: pointer;
+  display: inline-block;
+}
+#footer .pannel.pannel-Aa .font dd {
+  width: 40%;
+}
+#footer .pannel.pannel-Aa .font dd span {
+  height: 36.11111111111111px;
+  width: 75%;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  box-shadow: 1px 0 1px 0px inset, 0 1px 1px 0px inset, -1px 0px 1px 0px inset, 0px -1px 1px 0px inset;
+  line-height: 36.11111111111111px;
+  vartical-align: middle;
+}
+#footer .pannel.pannel-Aa .bg-color dd {
+  width: 16%;
+}
+#footer .pannel.pannel-Aa .bg-color dd span {
+  height: 32.5px;
+  width: 32.5px;
+  border-radius: 50%;
+  vertical-align: -10px;
+}

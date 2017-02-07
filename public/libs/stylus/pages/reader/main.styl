@@ -1,0 +1,39 @@
+html, body
+  height 100%
+  overflow hidden
+
+body
+  transform translate3d(0, 0, 0)
+
+#container
+  overflow-y auto
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  padding 15px 5% 40px
+  line-height 1.5
+  background-color #f8f9c4
+  h1
+    color #615921
+    border-bottom 2px solid
+    line-height 2
+    text-align center
+    font-size 28px
+  section
+    padding 20px 5px
+    p
+      text-indent 2em
+      font-size 15px
+      color #222222
+      margin-bottom 3px
+  &.night
+    background-color #343434 !important
+    h1
+      color #c1b539
+    p
+      color #c9c9c9
+    .page-turning
+      .item
+        background-color #1b1b1b

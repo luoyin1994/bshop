@@ -1,0 +1,23 @@
+li-len = 2
+turning-width = 85%
+turning-height = 35px
+font-color = #e7e7e7
+.page-turning
+  width turning-width
+  height turning-height
+  line-height turning-height
+  color font-color
+  margin 0 auto
+  background #222222
+  text-align center
+  border-radius 5px
+  .next-page, .last-page, .line
+    display inline-block
+  .line                 //使用height，line-height，vertical-align实现行内元素垂直方向居中，置顶，置底
+    line-width = 1px    //使用时居中不是绝对的，是根据基线线来居中，
+    width 0
+    height 100%      //高度100%时相邻元素会下移，这时可以设定vertical-align:top/bottom来解决
+    vertical-align top   //middle也可以解决但是会在竖线顶部留下缺口，应该是基线对齐的缘故，因为基线并不是绝对的对齐
+    border-left line-width  solid   //在高度不是100%时vertical-align middle居中效果相对好一些
+  .next-page, .last-page
+    width (100% / li-len) - 1

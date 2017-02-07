@@ -1,68 +1,18 @@
 extends ../layout
-
 block style
-  style
-    :stylus
-      html, body
-        height 100%
-        overflow hidden
-
-      body
-        background-color #f8f9c4
-        transform translate3d(0, 0, 0)
-
-    :stylus
-      #container
-        overflow-y auto
-        position absolute
-        top 0
-        bottom 0
-        left 0
-        right 0
-        margin 0 auto
-        padding 15px 5% 40px
-        line-height 1.5
-
-        h1
-          color #615921
-          border-bottom 2px solid
-          line-height 2
-          text-align center
-          font-size 28px
-        section
-          padding 20px 5px
-          p
-            text-indent 2em
-            font-size 15px
-            color #222222
-            margin-bottom 3px
+  link(rel='stylesheet' href='/libs/stylus/pages/reader/main.css')
 
 block content
   include ../component/reader/header
 
-  #container
+  #container(v-bind:class='{night:nightFlag}' v-bind:style="{background:bgColor}" @click='toggleTopBottom()' )
     h1 #{book.t}
     section
       each item in book.p
-        p #{item}
+        p(v-bind:style="{'font-size':passageFontSize}") #{item}
     include ../component/reader/page-turning
 
   include ../component/reader/footer
 
 block script
-  script.
-      (function () {
-          // 给一些特殊的节点增加id可以提高遍历的速度
-          var header    = $('#header')
-          var footer    = $('#footer')
-          var container = $('#container')
-          var pannel    = footer.find('.pannel')
-          container.click(function () {
-              header.toggle()
-              footer.toggle()
-              pannel.css({//换出和退回header，footer时pannel默认隐藏
-                  opacity: 0,
-                  height : 0  //如果只有opacity的话，可以点击的按钮依然可以点击，并没有真正意义上的隐藏
-              })
-          })
-      })()
+  script(src='/libs/js/vuejs/reader.js')
