@@ -1,7 +1,7 @@
 //闭包不会影响到其他代码
 (function () {
     //封装一个类
-    var util = (function () {//util获取的是闭包执行后的值，是一个对象
+    var util             = (function () {//util获取的是闭包执行后的值，是一个对象
         // todo 本地存储
         //防止域名重复，导致覆盖
         var prefix        = 'html5_reader_'
@@ -20,7 +20,7 @@
                     //base64解密返回的数据回去json
                     var data = $.base64.decode(result)
                     var json = decodeURIComponent(escape(data))
-                    callback(data)
+                    callback(json)
                 }
             })
         }
@@ -31,20 +31,26 @@
             getBSONP     : getBSONP
         }
     })()
+    var fictionContainer = $('#fiction')
 
     function main() {
         //    todo 整个项目的入口函数
         var readerModel = ReaderModel()
-        readerModel.init()
+        var readerUI    = ReaderBaseFrame(fictionContainer)
+        readerModel.init(function (data) {
+            readerUI(data)
+        })
+
     }
 
     function ReaderModel() {
         //    todo 实现和阅读器相关数据交互的方法
         var Chapter_id
-        var init                 = function () {
+        var init                 = function (UIcallback) {
             getFictionInfo(function () {
-                getCurChapterContent(Chapter_id, function () {
+                getCurChapterContent(Chapter_id, function (data) {
                     //    todo ...
+                    UIcallback && UIcallback(data)
                 })
             })
         }
@@ -55,7 +61,7 @@
                 callback && callback()
             }, 'json')
         }
-        var getCurChapterContent = function (chapter_id,data) {
+        var getCurChapterContent = function (chapter_id, callback) {
             $.get('/test/data/data' + chapter_id + '.json', function (data) {
                 if (data.result == 0) {
                     var url = data.jsonp
@@ -63,7 +69,7 @@
                         callback && callback(data)
                     })
                 }
-            },'json')
+            }, 'json')
         }
         return {
             init: init
@@ -71,8 +77,25 @@
 
     }
 
-    function ReaderBaseFrame() {
+    function ReaderBaseFrame(container) {
         //    todo 渲染基本的UI结构
+        function parseChapterData(jsonData) {
+            // todo 解析章节数据并返回组织好的html代码
+            var jsonObj = JSON.parse(jsonData)
+            var html    = '<h1>' + jsonObj.t + '</h1>'
+            html += '<section>'
+            jsonObj.p.map(function (val) {
+                html += '<p v-bind:style=\"{\'font-size\':passageFontSize}\">' + val + '</p>'
+            })
+            html += '</section>'
+            return html
+        }
+
+        return function (data) {
+            //data从数据层获得
+            container.html(parseChapterData(data))
+        }
+
     }
 
     function EventHanlder() {

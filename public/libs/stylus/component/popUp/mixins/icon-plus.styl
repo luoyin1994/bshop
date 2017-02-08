@@ -1,0 +1,15 @@
+@import 'center-both-absolute.styl';
+icon-plus(thick = 2px,wrapwidth = 20px)
+  position absolute
+  width wrapwidth
+  height wrapwidth
+  &:before, &:after
+    border-radius 1px
+    content ''
+    center-both-absolute()
+  &:before
+    width 0.6 * wrapwidth
+    border-top thick solid
+  &:after
+    height 0.6 * wrapwidth
+    border-left thick solid

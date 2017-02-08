@@ -1,0 +1,30 @@
+@import "mixins/center-y-relative.styl"
+@import "mixins/center-both-absolute.styl"
+#chapterOneAlert
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background rgba(204, 204, 204, 0.4)
+  .alert
+    center-both-absolute()
+    background-color #ffffff
+    alert-height = 20%
+    height alert-height
+    width 60%
+    border-radius 3px
+    box-shadow 1px 1px 15px #636363
+    .content
+      margin 0 auto
+      center-y-relative()
+      vertical-align middle
+      width 80%
+      .warning-text
+        text-align center
+        &:before
+          content '已经到第一章了哦'
+        &.last-chapter
+          &:before
+            content '已经到最后一章了哦'
+

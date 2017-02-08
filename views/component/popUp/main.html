@@ -1,0 +1,13 @@
+
+<link rel="stylesheet" href="/components/address/popUp/style/style.css"/>
+<div id="popUp" v-if="popUpFlag">
+  <div class="alert"><i @click="popUpFlag=false" class="icon-close"></i>
+    <div class="content">
+      <div class="warning-text">你确认删除此订单信息吗？</div>
+      <div class="choose-wrap">
+        <div @click="delProduct" class="button yes">YES</div>
+        <div @click="popUpFlag=false" class="button no danger">NO</div>
+      </div>
+    </div>
+  </div>
+</div>

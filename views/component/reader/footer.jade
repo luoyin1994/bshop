@@ -7,13 +7,13 @@ footer#footer(v-show='topBottomFlag')
     li.item(@click='toggleFontPannel')
       i.icon.icon-Aa
     li.item(@click='toggleDayNight')
-      i.icon.icon-moon.change-style
+      i.icon.change-style(:class="{'icon-sun':nightFlag==true,'icon-moon':nightFlag==false}")
   .pannel.pannel-Aa(:class="{hide:hidepannel}")
     dl.font
       dt 字号
       dd: span.enlarge(@click='enlargeFontSize()') 大
       dd: span.diminish(@click='enlargeFontSize(-1)') 小
-      dd: span.reset(@click="passageFontSize='15px'") 重置
+      dd: span.reset(@click="enlargeFontSize(0)") 重置
     dl.bg-color(v-if='!nightFlag')
       dt 背景
       dd: span.pinklight(@click='changeBgColor($event)')

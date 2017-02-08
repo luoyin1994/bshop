@@ -1,0 +1,40 @@
+#chapterOneAlert {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(204,204,204,0.4);
+}
+#chapterOneAlert .alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 20%;
+  width: 60%;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px #636363;
+}
+#chapterOneAlert .alert .content {
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  vertical-align: middle;
+  width: 80%;
+}
+#chapterOneAlert .alert .content .warning-text {
+  text-align: center;
+}
+#chapterOneAlert .alert .content .warning-text:before {
+  content: '已经到第一章了哦';
+}
+#chapterOneAlert .alert .content .warning-text.last-chapter:before {
+  content: '已经到最后一章了哦';
+}

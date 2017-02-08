@@ -6,14 +6,13 @@ block content
   include ../component/reader/header
 
   #container(v-bind:class='{night:nightFlag}' v-bind:style="{'background-color':bgColor}" @click='toggleTopBottom()' )
-    h1 #{book.t}
+    h1 {{fictionData.t}}
     section
-      each item in book.p
-        p(v-bind:style="{'font-size':passageFontSize}") #{item}
+      p(v-for='item in fictionData.p' v-bind:style="{'font-size':passageFontSize}") {{item}}
     include ../component/reader/page-turning
 
   include ../component/reader/footer
+  include ../component/popUp/main
 
 block script
-  script(src='/libs/js/zepto/main.js')
-  script(src='/libs/js/vuejs/reader.js')
+  script(src='/libs/js/bundle.js')
